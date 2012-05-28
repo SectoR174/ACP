@@ -1,6 +1,7 @@
 <?
 include "./includes/config.php";
 include "./includes/functions.php";
+session_start();
 mysql_connect("$mysql_host","$mysql_login","$mysql_password");
 mysql_select_db("$mysql_db_realmd");
 echo'
@@ -20,8 +21,6 @@ echo'
 			</table>
 		</form>
 ';
-include ("./include/core.php");
-session_start();
 
 $ulogin = trim(mysql_escape_string($_POST['login']));
 $upass = trim(mysql_escape_string($_POST['pass']));
